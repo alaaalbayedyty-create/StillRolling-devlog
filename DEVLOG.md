@@ -1710,3 +1710,35 @@ Entries start on Nov 12, 08:00 Jordan time.
 the cover picture, and no game code. The game's own repository stays private. Before publishing, both files were
 scanned for the online service's ids, e-mail addresses, keys and paths on the owner's PC: none. The final versions of
 both files are pushed there again before the entry is uploaded.
+
+**Nov 14, 14:35, lead: the owner's two-home test, ONLINE by default, the submission build.**
+
+- **The owner's test.** He sent the 11:56 zip to a friend on another internet connection and they played through the
+  online rooms following `Docs/ROOMS_REMOTE_TEST.md`. His report: it works very well. No step-by-step record or logs
+  were kept, and three to five players online at once is still untried.
+- **His decision after it: a new room is ONLINE by default.** The lead made this change itself (no agent). `bDraftOnline`
+  is now the player's wish and starts on; a new `GetDraftWhere()` says what OPEN THE ROOM will really do. Signed in: the
+  room opens online. First sign-in still on its way: WHERE says `ONLINE    (SIGNING IN ...)` and OPEN THE ROOM answers
+  `STILL SIGNING IN ONLINE. WAIT A MOMENT, OR CLICK WHERE TO HOST ON THIS NETWORK.` instead of quietly opening a room
+  nobody outside can find. Service not answering, or online switched off: WHERE falls back to this network by itself
+  (`THIS NETWORK    (ONLINE IS NOT AVAILABLE NOW)`). A room that fell back does not turn the wish off for the next one.
+- **A fault the tests showed, fixed.** The first online run after the rebuild failed: the game stalled for 47 s while
+  starting, and its first tick declared the sign-in dead ("no answer within 15 s") before the answer could be read.
+  The 15 s now counts only time in which the game is ticking (`FSREosRooms::Tick`). A second failure in the same series
+  (the fail-safe run: the second player did not come back after a retake) was the PC, not the code: the host's map
+  load took 16.5 s instead of about 4 and the client's 20 s connection timeout ran out; the same run passed on the
+  rebuilt code. A host whose map load takes longer than 20 s would lose its same-network players at a retake; this is
+  not changed.
+- **Checks on the final code** (editor build): same-network rooms 8 and 8, online 10 and 9 (the host's first check now
+  also requires that WHERE stood on ONLINE untouched), broken sign-in 9 and 9 (now also: WHERE fell back to this
+  network), switched off 9 and 9 (run on the build before the stall fix, which does not touch that path). **From the
+  packaged game:** AutoRun 54/54 with 0 problems and 215 of 215 sounds, same-network rooms 8 and 8, online 10 and 9,
+  broken sign-in 9 and 9, switched off 9 and 9, both exe icons match. Only the rooms code changed, so the other
+  suites (Opening, Director, SetPiece, Slam, Extra, Understudy, Chase, Scare, KillTest, Net) were not run again; their
+  last full run is ROOMS's of 12:00 on the code before this change.
+- **The submission zip:** `SoloTake_StillRolling.zip`, 954,903,604 bytes.
+- **The video** is on YouTube (uploaded by the owner): `https://youtu.be/IGEPdkHIBxM`, checked signed out: it plays,
+  54.4 s. It was not uploaded by an agent: uploads through the YouTube API from an unaudited project are locked to
+  private, and the browser tool's upload limit is 10 MB.
+- **The itch.io page** is filled in by the owner from texts the lead prepared (cover, five screenshots taken from the
+  video's own frames, description, AI statement). The owner uploads the zip and submits by hand.

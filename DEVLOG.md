@@ -1742,3 +1742,9 @@ both files are pushed there again before the entry is uploaded.
   private, and the browser tool's upload limit is 10 MB.
 - **The itch.io page** is filled in by the owner from texts the lead prepared (cover, five screenshots taken from the
   video's own frames, description, AI statement). The owner uploads the zip and submits by hand.
+
+**Nov 14, about 15:00, lead: the entry is in.** The owner uploaded `SoloTake_StillRolling.zip` to his itch.io page
+(`https://alaaalbayed.itch.io/still-rolling`), made the page public and submitted it to the jam by hand. The lead
+checked the public page signed out: the zip (910 MB) is there, the video is embedded, five screenshots, genre, tags and
+the AI disclosure with its statement show, and the page says "Submission to 2026 Epic AI MegaJam". One thing was
+missing at that check: the upload had no platform ticked (Windows); the owner was told.

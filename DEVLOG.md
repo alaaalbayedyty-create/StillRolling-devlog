@@ -1705,3 +1705,8 @@ Entries start on Nov 12, 08:00 Jordan time.
     with a friend; the lead (Claude) split the work into phases, set the two-hour cap on the online test and the rule
     that the home-network rooms must not change; the agent chose the plugin set, the switch, the retake rejoin and the
     wait on quit.
+**Nov 14, 13:40, lead: this dev log is public.** The owner chose where: a separate public repository,
+`https://github.com/alaaalbayedyty-create/StillRolling-devlog`, holding `DEVLOG.md`, `ASSETS.md`, a short README and
+the cover picture, and no game code. The game's own repository stays private. Before publishing, both files were
+scanned for the online service's ids, e-mail addresses, keys and paths on the owner's PC: none. The final versions of
+both files are pushed there again before the entry is uploaded.
